@@ -20,7 +20,6 @@ public User(String nomUser, String prenomUser, String emailUser, String telUser)
 
 public User() {
 	super();
-	// TODO Auto-generated constructor stub
 }
 
 public String getNomUser() {

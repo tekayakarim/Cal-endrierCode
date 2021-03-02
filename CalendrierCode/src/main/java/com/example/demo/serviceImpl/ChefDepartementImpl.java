@@ -1,5 +1,7 @@
 package com.example.demo.serviceImpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -39,6 +41,27 @@ public class ChefDepartementImpl implements ChefDepartementService {
 			return "success";
 		
 		return "fail";
+	}
+
+	@Override
+	public ChefDepartement getOneChef(long id) {
+		
+		try {
+			ChefDepartement chef=chefDepartementRepository.findById(id);
+			if (chefDepartementRepository.findById(id)!=null) {
+				return chef;
+			}
+		} catch (Exception e) {
+		
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public List<ChefDepartement> getAll() {
+	
+		return chefDepartementRepository.findAll();
 	}
 
 }

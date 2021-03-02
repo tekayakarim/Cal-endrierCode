@@ -23,7 +23,6 @@ public Modulee(String codeM, String nomM, String niveau, String semstre) {
 
 public Modulee() {
 	super();
-	// TODO Auto-generated constructor stub
 }
 
 

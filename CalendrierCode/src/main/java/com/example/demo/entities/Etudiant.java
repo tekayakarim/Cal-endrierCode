@@ -17,6 +17,11 @@ public class Etudiant extends User{
 		this.codeC = codeC;
 	}
 
+	public Etudiant() {
+		super();
+		
+	}
+
 	public ChefDepartement getChef() {
 		return chef;
 	}

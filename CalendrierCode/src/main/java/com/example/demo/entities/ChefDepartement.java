@@ -12,6 +12,11 @@ public class ChefDepartement extends User{
 		this.departement = departement;
 	}
 
+	public ChefDepartement() {
+		super();
+
+	}
+
 	public String getDepartement() {
 		return departement;
 	}
