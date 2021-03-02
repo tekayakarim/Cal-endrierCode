@@ -1,11 +1,12 @@
 package com.example.demo.serviceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.example.demo.entities.Seance;
 import com.example.demo.repository.SeanceRepository;
 import com.example.demo.service.SeanceService;
-
+@Service
 public class SeanceImpl implements SeanceService {
 
 	@Autowired

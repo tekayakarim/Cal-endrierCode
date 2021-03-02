@@ -1,12 +1,12 @@
 package com.example.demo.serviceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.stereotype.Service;
 
 import com.example.demo.entities.Enseignant;
 import com.example.demo.repository.EnseignantRepository;
 import com.example.demo.service.EnseignantService;
-
+@Service
 public class EnseignantImpl implements EnseignantService {
 
 	@Autowired
