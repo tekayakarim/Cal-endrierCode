@@ -2,9 +2,7 @@ package com.example.demo.serviceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.example.demo.entities.ChefDepartement;
 import com.example.demo.entities.Etudiant;
-import com.example.demo.repository.ChefDepartementRepository;
 import com.example.demo.repository.EtudiantRepository;
 import com.example.demo.service.EtudiantService;
 

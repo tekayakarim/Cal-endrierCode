@@ -1,9 +1,9 @@
 package com.example.demo.service;
 
-
+import com.example.demo.entities.Modulee;
 
 public interface ModuleService {
-	String addModule(Module module);
-	String updateModule(Module module);
-	String deleteModule(Module module);
+	String addModule(Modulee module);
+	String updateModule(Modulee module);
+	String deleteModule(Modulee module);
 }

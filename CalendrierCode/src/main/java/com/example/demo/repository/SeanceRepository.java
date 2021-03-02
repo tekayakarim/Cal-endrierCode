@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.entities.Seance;
 @Repository
 public interface SeanceRepository extends JpaRepository<Seance, String> {
-
+Seance findByCodeS(String codeS);
 }

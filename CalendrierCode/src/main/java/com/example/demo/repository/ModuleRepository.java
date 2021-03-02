@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.entities.Modulee;
 @Repository
 public interface ModuleRepository extends JpaRepository<Modulee, String> {
-
+Modulee findByCodeM(String codeM);
 }
