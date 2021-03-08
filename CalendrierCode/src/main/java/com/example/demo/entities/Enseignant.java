@@ -13,8 +13,7 @@ import javax.persistence.OneToOne;
 @Entity
 public class Enseignant extends User{
 
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private List<Modulee> lstModule;
+
 	
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Seance> lstSeance;
@@ -34,13 +33,6 @@ public class Enseignant extends User{
 		super(nomUser, prenomUser, emailUser, telUser);
 	}
 
-	public List<Modulee> getLstModule() {
-		return lstModule;
-	}
-
-	public void setLstModule(List<Modulee> lstModule) {
-		this.lstModule = lstModule;
-	}
 
 	public List<Seance> getLstSeance() {
 		return lstSeance;

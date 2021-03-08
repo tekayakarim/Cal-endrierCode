@@ -6,7 +6,7 @@ import com.example.demo.entities.ChefDepartement;
 import com.example.demo.entities.Etudiant;
 
 public interface EtudiantService {
-String addEtudiant(Etudiant etudiant);
+String addEtudiant(Etudiant etudiant,long id);
 String updateEtudiant(Etudiant etudiant);
 String deleteEtudiant(Etudiant etudiant);
 Etudiant getOneEtudiant(long id);

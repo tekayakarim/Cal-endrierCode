@@ -20,7 +20,7 @@ public Classe(String codeC, String niveauC) {
 
 public Classe() {
 	super();
-	// TODO Auto-generated constructor stub
+	
 }
 
 public ChefDepartement getChef() {

@@ -6,9 +6,9 @@ import com.example.demo.entities.ChefDepartement;
 import com.example.demo.entities.Modulee;
 
 public interface ModuleService {
-	String addModule(Modulee module);
+	String addModule(Modulee module,long id);
 	String updateModule(Modulee module);
 	String deleteModule(Modulee module);
-	Module getOneModule(String codeM);
-	List<Module> getAll();
+	Modulee getOneModule(String codeM);
+	List<Modulee> getAll();
 }

@@ -6,9 +6,9 @@ import com.example.demo.entities.ChefDepartement;
 import com.example.demo.entities.Seance;
 
 public interface SeanceService {
-	String addSeance(Seance seance);
+	String addSeance(Seance seance,long id);
 	String updateSeance(Seance seance);
 	String deleteSeance(Seance seance);
-	Seance getOneChef(String codeS);
+	Seance getOneSeance(String codeS);
 	List<Seance> getAll();
 }

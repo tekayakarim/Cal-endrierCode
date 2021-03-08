@@ -1,9 +1,15 @@
 package com.example.demo.serviceImpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.entities.ChefDepartement;
+import com.example.demo.entities.Modulee;
 import com.example.demo.entities.Seance;
+import com.example.demo.repository.ChefDepartementRepository;
+import com.example.demo.repository.ModuleRepository;
 import com.example.demo.repository.SeanceRepository;
 import com.example.demo.service.SeanceService;
 @Service
@@ -11,11 +17,22 @@ public class SeanceImpl implements SeanceService {
 
 	@Autowired
 	SeanceRepository seanceRepository;
-	
+	@Autowired
+	ChefDepartementRepository chefDepartementRepository;
+	@Autowired
+	ModuleRepository  moduleRepository;
 	@Override
-	public String addSeance(Seance seance) {
-		if(seanceRepository.save(seance)!=null)
-			return "success";
+	public String addSeance(Seance seance,long id) {
+		try {
+			//chef determine 
+			ChefDepartement  chef=chefDepartementRepository.findById(id);
+			seance.setChef(chef);
+			if(seanceRepository.save(seance)!=null)
+				return "success";
+		} catch (Exception e) {
+		
+			e.printStackTrace();
+		}
 		return "fail";
 	}
 
@@ -40,6 +57,26 @@ public class SeanceImpl implements SeanceService {
 			return "success";
 		
 		return "fail";
+	}
+
+	@Override
+	public Seance getOneSeance(String codeS) {
+		try {
+			Seance se=seanceRepository.findByCodeS(codeS);
+			if (se!=null) {
+				return se;
+			}
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public List<Seance> getAll() {
+	
+		return seanceRepository.findAll();
 	}
 
 }

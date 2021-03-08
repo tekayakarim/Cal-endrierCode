@@ -1,7 +1,12 @@
 package com.example.demo.entities;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 @Entity
 public class Seance {
@@ -11,6 +16,9 @@ public class Seance {
 
 	@OneToOne
 	private ChefDepartement chef;
+	
+	@OneToOne
+	private Modulee module;
 	
 	public Seance(String codeS, String codeC, String nomM, String nomE, String heureDeb, String heureFin, String date) {
 		super();
@@ -93,6 +101,16 @@ public class Seance {
 
 	public void setDate(String date) {
 		this.date = date;
+	}
+
+
+	public Modulee getModule() {
+		return module;
+	}
+
+
+	public void setModule(Modulee module) {
+		this.module = module;
 	}
 	
 

@@ -6,8 +6,8 @@ import com.example.demo.entities.ChefDepartement;
 import com.example.demo.entities.Enseignant;
 
 public interface EnseignantService {
-	String addEnseignant(Enseignant enseignant);
-	String uddateEnseignant(Enseignant enseignant);
+	String addEnseignant(Enseignant enseignant,long id);
+	String updateEnseignant(Enseignant enseignant);
 	String deleteEnseignant(Enseignant enseignant);
 	Enseignant getOneEnseignant(long id);
 	List<Enseignant> getAll();
