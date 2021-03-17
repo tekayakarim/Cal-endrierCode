@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.entities.ChefDepartement;
-import com.example.demo.entities.Modulee;
 import com.example.demo.entities.Seance;
 import com.example.demo.repository.ChefDepartementRepository;
 import com.example.demo.repository.ModuleRepository;

@@ -1,31 +1,29 @@
 package com.example.demo.entities;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 @Entity
 public class Seance {
 	@Id
 	private String codeS;
-	private String codeC,nomM,nomE,heureDeb,heureFin,date;
-
+	private String heureDeb,heureFin,date;
+	
+	@OneToOne
+	private Classe cl;
+	
 	@OneToOne
 	private ChefDepartement chef;
 	
 	@OneToOne
 	private Modulee module;
 	
-	public Seance(String codeS, String codeC, String nomM, String nomE, String heureDeb, String heureFin, String date) {
+	@OneToOne
+	private Enseignant enseignant;
+	
+	public Seance(String codeS, String heureDeb, String heureFin, String date) {
 		super();
 		this.codeS = codeS;
-		this.codeC = codeC;
-		this.nomM = nomM;
-		this.nomE = nomE;
 		this.heureDeb = heureDeb;
 		this.heureFin = heureFin;
 		this.date = date;
@@ -55,29 +53,6 @@ public class Seance {
 		this.codeS = codeS;
 	}
 
-	public String getCodeC() {
-		return codeC;
-	}
-
-	public void setCodeC(String codeC) {
-		this.codeC = codeC;
-	}
-
-	public String getNomM() {
-		return nomM;
-	}
-
-	public void setNomM(String nomM) {
-		this.nomM = nomM;
-	}
-
-	public String getNomE() {
-		return nomE;
-	}
-
-	public void setNomE(String nomE) {
-		this.nomE = nomE;
-	}
 
 	public String getHeureDeb() {
 		return heureDeb;

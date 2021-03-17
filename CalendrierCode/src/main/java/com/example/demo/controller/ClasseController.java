@@ -13,9 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.entities.ChefDepartement;
 import com.example.demo.entities.Classe;
-import com.example.demo.service.ChefDepartementService;
 import com.example.demo.service.ClasseService;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
