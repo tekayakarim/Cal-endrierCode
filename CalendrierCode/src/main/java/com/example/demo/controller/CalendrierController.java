@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.entities.Etudiant;
 import com.example.demo.entities.Seance;
 import com.example.demo.service.CalendrierService;
 
@@ -23,5 +24,10 @@ public class CalendrierController {
 	@PostMapping("/addSeanceToEnseignant")
 	public List<Seance> addSeanceToEnseignant(@RequestParam String codeS,@RequestParam long id) {
 		return calendrierService.addSeanceToEnseignant(codeS, id);
+	}
+	
+	@PostMapping("/addEtudiantToClasse")
+	public Etudiant addEtudiantToClasse(@RequestParam long id,@RequestParam String codeC) {
+		return calendrierService.addEtudiantToClasse(id, codeC);
 	}
 }

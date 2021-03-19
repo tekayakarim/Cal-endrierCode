@@ -10,7 +10,9 @@ import com.example.demo.entities.Classe;
 import com.example.demo.entities.Enseignant;
 import com.example.demo.entities.Etudiant;
 import com.example.demo.entities.Seance;
+import com.example.demo.repository.ClasseRepository;
 import com.example.demo.repository.EnseignantRepository;
+import com.example.demo.repository.EtudiantRepository;
 import com.example.demo.repository.SeanceRepository;
 import com.example.demo.service.CalendrierService;
 @Service
@@ -21,6 +23,12 @@ SeanceRepository seanceRepository;
 
 @Autowired
 EnseignantRepository enseignantRepository;
+
+@Autowired
+EtudiantRepository etudiantRepository;
+
+@Autowired
+ClasseRepository classeRepository;
 
 	@Override
 	public List<Seance> addSeanceToEnseignant(String codeS, long id) {
@@ -58,7 +66,19 @@ EnseignantRepository enseignantRepository;
 
 	@Override
 	public Etudiant addEtudiantToClasse(long id, String codeC) {
-		// TODO Auto-generated method stub
+		try {
+			Etudiant et=etudiantRepository.findById(id);
+			Classe cl=classeRepository.findByCodeC(codeC);
+			if(et!=null && cl!=null)
+			{
+				et.setClasse(cl);
+				etudiantRepository.flush();
+			}
+			return et;
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
 		return null;
 	}
 

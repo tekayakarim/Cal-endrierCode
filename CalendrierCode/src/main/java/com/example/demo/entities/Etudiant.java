@@ -6,15 +6,15 @@ import javax.persistence.OneToOne;
 @Entity
 public class Etudiant extends User{
 
-	private String codeC;
+	
 	@OneToOne
 	private ChefDepartement chef;
 	@OneToOne
 	private Classe classe;
 
-	public Etudiant(String nomUser, String prenomUser, String emailUser, String telUser, String codeC) {
+	public Etudiant(String nomUser, String prenomUser, String emailUser, String telUser) {
 		super(nomUser, prenomUser, emailUser, telUser);
-		this.codeC = codeC;
+		
 	}
 
 	public Etudiant() {
@@ -38,13 +38,7 @@ public class Etudiant extends User{
 		this.classe = classe;
 	}
 
-	public String getCodeC() {
-		return codeC;
-	}
 
-	public void setCodeC(String codeC) {
-		this.codeC = codeC;
-	}
 	
 	
 }
