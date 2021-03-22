@@ -15,7 +15,7 @@ import com.example.demo.service.CalendrierService;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/calendrier")
+@RequestMapping("/main/calendrier")
 public class CalendrierController {
 
 	@Autowired

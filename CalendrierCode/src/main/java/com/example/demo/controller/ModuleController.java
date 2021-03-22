@@ -18,7 +18,7 @@ import com.example.demo.service.ModuleService;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/module")
+@RequestMapping("/main/module")
 public class ModuleController {
 	@Autowired
 	ModuleService moduleService;

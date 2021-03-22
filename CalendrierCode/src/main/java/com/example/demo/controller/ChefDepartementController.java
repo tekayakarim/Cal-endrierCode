@@ -18,7 +18,7 @@ import com.example.demo.service.ChefDepartementService;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/chefDepartement")
+@RequestMapping("/main/chefDepartement")
 public class ChefDepartementController {
 
 	@Autowired

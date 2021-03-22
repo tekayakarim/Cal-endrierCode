@@ -18,7 +18,7 @@ import com.example.demo.service.SeanceService;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/seance")
+@RequestMapping("/main/seance")
 public class SeanceController {
 	@Autowired
 	SeanceService seanceService;

@@ -18,7 +18,7 @@ import com.example.demo.service.EnseignantService;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/enseignant")
+@RequestMapping("/main/enseignant")
 public class EnseignantController {
 	@Autowired
 	EnseignantService enseignantService;
