@@ -7,18 +7,18 @@ import javax.persistence.OneToOne;
 public class Modulee {
 @Id
 private String codeM;
-private String nomM,niveau,semstre;
+private String nomM,niveau,semestre;
 
 @OneToOne
 private ChefDepartement chef;
 
 
-public Modulee(String codeM, String nomM, String niveau, String semstre) {
+public Modulee(String codeM, String nomM, String niveau, String semestre) {
 	super();
 	this.codeM = codeM;
 	this.nomM = nomM;
 	this.niveau = niveau;
-	this.semstre = semstre;
+	this.semestre = semestre;
 }
 
 
@@ -55,11 +55,16 @@ public String getNiveau() {
 public void setNiveau(String niveau) {
 	this.niveau = niveau;
 }
-public String getSemstre() {
-	return semstre;
+
+
+public String getSemestre() {
+	return semestre;
 }
-public void setSemstre(String semstre) {
-	this.semstre = semstre;
+
+
+public void setSemestre(String semestre) {
+	this.semestre = semestre;
 }
+
 
 }
