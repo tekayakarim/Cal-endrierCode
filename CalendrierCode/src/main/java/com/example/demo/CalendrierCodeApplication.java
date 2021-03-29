@@ -51,7 +51,7 @@ public class CalendrierCodeApplication {
 					JwtRole adminRole = jwtRoleRepository.findByname(JwtERole.ROLE_CHEFDEPARTEMENT);
 					roles.add(adminRole);
 
-					JwtUser user=new JwtUser("chef", "chef", "chef@gmail.com", "chef");
+					JwtUser user=new JwtUser("chef", "chef", "chef", "chef", "chef", "chef");
 					
 
 					user.setPassword(

@@ -42,7 +42,7 @@ public class JwtUserDetails implements UserDetails {
 
 		return new JwtUserDetails(
 				user.getId(), 
-				user.getEmailUser(), 
+				user.getUserName(), 
 				user.getPassword(), 
 				authorities);
 	}

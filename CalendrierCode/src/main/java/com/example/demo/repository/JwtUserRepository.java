@@ -17,7 +17,7 @@ import com.example.demo.entities.JwtUser;
 public interface JwtUserRepository extends JpaRepository<JwtUser, Long> {
 
 	Boolean existsByUserName(String userName);
-	Optional<JwtUser> findByEmailUser(String emailUser);
+	Optional<JwtUser> findByUserName(String userName);
 	JwtUser findByid(long id);
 
 }

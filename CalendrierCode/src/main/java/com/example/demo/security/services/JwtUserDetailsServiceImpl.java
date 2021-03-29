@@ -21,9 +21,9 @@ public class JwtUserDetailsServiceImpl implements UserDetailsService {
 
 	@Override
 	@Transactional
-	public UserDetails loadUserByUsername(String emailUser) throws UsernameNotFoundException {
-		JwtUser user = jwtUserRepository.findByEmailUser(emailUser)
-				.orElseThrow(() -> new UsernameNotFoundException("User Not Found with email: " + emailUser));
+	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
+		JwtUser user = jwtUserRepository.findByUserName(userName)
+				.orElseThrow(() -> new UsernameNotFoundException("User Not Found with email: " + userName));
 
 		return JwtUserDetails.build(user);
 	}

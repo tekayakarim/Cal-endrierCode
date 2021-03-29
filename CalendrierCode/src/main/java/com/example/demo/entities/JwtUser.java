@@ -33,6 +33,18 @@ public JwtUser(String nomUser, String prenomUser, String emailUser, String telUs
 	this.telUser = telUser;
 }
 
+
+public JwtUser(String userName, String nomUser, String prenomUser, String emailUser, String telUser, String password) {
+	super();
+	this.userName = userName;
+	this.nomUser = nomUser;
+	this.prenomUser = prenomUser;
+	this.emailUser = emailUser;
+	this.telUser = telUser;
+	this.password = password;
+}
+
+
 public JwtUser() {
 	super();
 }
