@@ -7,6 +7,8 @@ public class SignupRequest {
     private String role; 
     private String nom;
     private String prenom;
+    
+private String tel;
 
     private String password;
 
@@ -14,6 +16,25 @@ public class SignupRequest {
 
    private String email;
    
+   private String groupe;
+   
+   
+	public String getTel() {
+	return tel;
+}
+
+public void setTel(String tel) {
+	this.tel = tel;
+}
+
+	public String getGroupe() {
+	return groupe;
+}
+
+public void setGroupe(String groupe) {
+	this.groupe = groupe;
+}
+
 	public String getEmail() {
 	return email;
 }
@@ -71,6 +92,19 @@ public void setEmail(String email) {
 
 	public void setRole(String role) {
 		this.role = role;
+	}
+
+	public SignupRequest(String userName, String nom, String prenom, String tel, String password, String cin,
+			String email, String groupe) {
+		super();
+		this.userName = userName;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.tel = tel;
+		this.password = password;
+		this.cin = cin;
+		this.email = email;
+		this.groupe = groupe;
 	}
 
 

@@ -17,7 +17,7 @@ public class JwtUser {
 	    @GeneratedValue
 	    private long id;
 		private String userName;
-private String nomUser,prenomUser,emailUser,telUser;
+private String nomUser,prenomUser,emailUser,telUser,groupe;
 @ManyToMany(fetch = FetchType.LAZY/*, cascade = CascadeType.ALL*/)
 @JoinTable(	name = "user_roles", 
 			joinColumns = @JoinColumn(name = "user_id"), 
@@ -104,6 +104,16 @@ public String getUserName() {
 
 public void setUserName(String userName) {
 	this.userName = userName;
+}
+
+
+public String getGroupe() {
+	return groupe;
+}
+
+
+public void setGroupe(String groupe) {
+	this.groupe = groupe;
 }
 
 

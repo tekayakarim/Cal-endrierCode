@@ -12,6 +12,14 @@ public class ChefDepartement extends JwtUser{
 		this.departement = departement;
 	}
 
+	
+	public ChefDepartement(String userName, String nomUser, String prenomUser, String emailUser, String telUser,
+			String password, String departement) {
+		super(userName, nomUser, prenomUser, emailUser, telUser, password);
+		this.departement = departement;
+	}
+
+
 	public ChefDepartement() {
 		super();
 

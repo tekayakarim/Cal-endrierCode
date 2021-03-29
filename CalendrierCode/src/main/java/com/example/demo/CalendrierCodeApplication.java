@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import com.example.demo.entities.ChefDepartement;
 import com.example.demo.entities.JwtRole;
 import com.example.demo.entities.JwtUser;
 import com.example.demo.model.JwtERole;
@@ -41,7 +42,10 @@ public class CalendrierCodeApplication {
 				{
 					jwtRoleRepository.save(new JwtRole(JwtERole.ROLE_ETUDIANT));
 					jwtRoleRepository.save(new JwtRole(JwtERole.ROLE_ENSEIGNANT));
+					jwtRoleRepository.save(new JwtRole(JwtERole.ROLE_PARENT));
+					jwtRoleRepository.save(new JwtRole(JwtERole.ROLE_ENTREPRISE));
 					jwtRoleRepository.save(new JwtRole(JwtERole.ROLE_CHEFDEPARTEMENT));
+					  
 					
 				}
 			
@@ -51,7 +55,7 @@ public class CalendrierCodeApplication {
 					JwtRole adminRole = jwtRoleRepository.findByname(JwtERole.ROLE_CHEFDEPARTEMENT);
 					roles.add(adminRole);
 
-					JwtUser user=new JwtUser("chef", "chef", "chef", "chef", "chef", "chef");
+					JwtUser user=new ChefDepartement("chef", "chef", "chef", "chef", "chef", "chef","chef");
 					
 
 					user.setPassword(
