@@ -9,7 +9,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Enseignant extends User{
+public class Enseignant extends JwtUser{
 
 
 	

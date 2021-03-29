@@ -3,7 +3,7 @@ package com.example.demo.entities;
 import javax.persistence.Entity;
 
 @Entity
-public class ChefDepartement extends User{
+public class ChefDepartement extends JwtUser{
 
 	private String departement;
 
