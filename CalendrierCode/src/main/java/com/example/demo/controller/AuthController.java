@@ -28,6 +28,7 @@ import com.example.demo.model.JwtUserDetails;
 import com.example.demo.model.LoginRequest;
 import com.example.demo.model.MessageResponse;
 import com.example.demo.model.SignupRequest;
+import com.example.demo.repository.ChefDepartementRepository;
 import com.example.demo.repository.JwtRoleRepository;
 import com.example.demo.repository.JwtUserRepository;
 import com.example.demo.security.JwtUtils;
@@ -46,8 +47,10 @@ public class AuthController {
 
 	@Autowired
 	JwtRoleRepository jwtRoleRepository;
-
-
+	
+	@Autowired
+	ChefDepartementRepository chefDepartementRepository;
+	
 	@Autowired
 	PasswordEncoder encoder;
 
@@ -96,31 +99,18 @@ public class AuthController {
 				role = jwtRoleRepository.findByName(JwtERole.ROLE_ENSEIGNANT)
 						.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
 				roles.add(role);
-				user= new Enseignant();
+			
+				user= new Enseignant(chefDepartementRepository.findById(1));
 				break;
 				case "etudiant":	
 					
 					role = jwtRoleRepository.findByName(JwtERole.ROLE_ETUDIANT)
 					.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
 					roles.add(role);
-					user=new Etudiant();
+					user=new Etudiant(chefDepartementRepository.findById(1));
+					
 					break;
 					
-				case "entreprise":
-					
-					role = jwtRoleRepository.findByName(JwtERole.ROLE_ENTREPRISE)
-					.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-					roles.add(role);
-					user=new JwtUser();
-					break;
-					
-				case "parent":
-
-					role = jwtRoleRepository.findByName(JwtERole.ROLE_PARENT)
-					.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-					roles.add(role);
-					user=new JwtUser();
-					break;
 			
 				default:
 					return ResponseEntity

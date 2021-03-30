@@ -42,8 +42,6 @@ public class CalendrierCodeApplication {
 				{
 					jwtRoleRepository.save(new JwtRole(JwtERole.ROLE_ETUDIANT));
 					jwtRoleRepository.save(new JwtRole(JwtERole.ROLE_ENSEIGNANT));
-					jwtRoleRepository.save(new JwtRole(JwtERole.ROLE_PARENT));
-					jwtRoleRepository.save(new JwtRole(JwtERole.ROLE_ENTREPRISE));
 					jwtRoleRepository.save(new JwtRole(JwtERole.ROLE_CHEFDEPARTEMENT));
 					  
 					

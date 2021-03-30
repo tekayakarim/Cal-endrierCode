@@ -21,7 +21,10 @@ public class Etudiant extends JwtUser{
 		super();
 		
 	}
-
+	public Etudiant(ChefDepartement chef) {
+		super();
+		setChef(chef);
+	}
 	public ChefDepartement getChef() {
 		return chef;
 	}

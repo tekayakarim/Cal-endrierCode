@@ -26,6 +26,10 @@ public class Enseignant extends JwtUser{
 		super();
 	
 	}
+	public Enseignant(ChefDepartement chef) {
+		super();
+	setChef(chef);
+	}
 
 	public Enseignant(String nomUser, String prenomUser, String emailUser, String telUser) {
 		super(nomUser, prenomUser, emailUser, telUser);
