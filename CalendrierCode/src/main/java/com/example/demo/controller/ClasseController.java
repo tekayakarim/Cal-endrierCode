@@ -34,8 +34,8 @@ public class ClasseController {
 	}
 	
 	@DeleteMapping("/delete")
-	public String deleteClasse(@RequestBody Classe classe) {
-		return classeService.deleteClasse(classe);
+	public String deleteClasse(@RequestParam String codeC) {
+		return classeService.deleteClasse(this.getClasse(codeC));
 	}
 	
 	@GetMapping("/get")

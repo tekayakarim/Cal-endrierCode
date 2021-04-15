@@ -34,8 +34,8 @@ public class ModuleController {
 	}
 	
 	@DeleteMapping("/delete")
-	public String deleteModule(@RequestBody Modulee module) {
-		return moduleService.deleteModule(module);
+	public String deleteModule(@RequestParam String codeM) {
+		return moduleService.deleteModule(this.getModule(codeM));
 	}
 	
 	@GetMapping("/get")

@@ -34,8 +34,8 @@ public class EtudiantController {
 	}
 	
 	@DeleteMapping("/delete")
-	public String deleteEtudiant(@RequestBody Etudiant etudiant) {
-		return etudiantService.deleteEtudiant(etudiant);
+	public String deleteEtudiant(@RequestParam long id) {
+		return etudiantService.deleteEtudiant(this.getEtudiant(id));
 	}
 	
 	@GetMapping("/get")

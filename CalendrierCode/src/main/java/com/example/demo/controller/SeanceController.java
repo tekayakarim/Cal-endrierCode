@@ -34,8 +34,8 @@ public class SeanceController {
 	}
 	
 	@DeleteMapping("/delete")
-	public String deleteSeance(@RequestBody Seance seance) {
-		return seanceService.deleteSeance(seance);
+	public String deleteSeance(@RequestParam String codeS) {
+		return seanceService.deleteSeance(this.getSeance(codeS));
 	}
 	
 	@GetMapping("/get")
