@@ -22,6 +22,8 @@ public class ModuleImpl implements ModuleService {
 		try {
 			ChefDepartement chef=chefDepartementRepository.findById(id);
 			module.setChef(chef);
+			if(moduleRepository.findByCodeM(module.getCodeM())!=null)
+				return "fail";
 			if(moduleRepository.save(module)!=null)
 				return "success";
 		} catch (Exception e) {

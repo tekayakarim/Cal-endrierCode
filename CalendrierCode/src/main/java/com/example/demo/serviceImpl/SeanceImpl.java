@@ -26,8 +26,13 @@ public class SeanceImpl implements SeanceService {
 			//chef determine 
 			ChefDepartement  chef=chefDepartementRepository.findById(id);
 			seance.setChef(chef);
+			
+			if(seanceRepository.findByCodeS(seance.getCodeS())!=null)
+				return "fail";
+			
 			if(seanceRepository.save(seance)!=null)
 				return "success";
+			
 		} catch (Exception e) {
 		
 			e.printStackTrace();

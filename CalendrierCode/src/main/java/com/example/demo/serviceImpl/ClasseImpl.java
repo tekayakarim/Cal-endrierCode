@@ -22,6 +22,9 @@ public class ClasseImpl implements ClasseService {
 		try {
 			ChefDepartement chef=chefDepartementRepository.findById(id);
 			classe.setChef(chef);
+			if(classeRepository.findByCodeC(classe.getCodeC())!=null)
+				return "fail";
+			
 			if (classeRepository.save(classe)!=null) {
 				return "success";
 			}

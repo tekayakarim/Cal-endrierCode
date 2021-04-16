@@ -3,9 +3,12 @@ package com.example.demo.entities;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+
+import com.sun.istack.NotNull;
 @Entity
 public class Classe {
 	@Id
+	@NotNull
 	private String codeC;
 private String niveauC;
 
