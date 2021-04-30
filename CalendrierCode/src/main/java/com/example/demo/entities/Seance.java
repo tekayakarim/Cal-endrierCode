@@ -8,6 +8,8 @@ public class Seance {
 	@Id
 	private String codeS;
 	private String heureDeb,heureFin,date;
+	private String type;
+	private String jour;
 	
 	@OneToOne
 	private Classe cl;
@@ -21,12 +23,15 @@ public class Seance {
 	@OneToOne
 	private Enseignant enseignant;
 	
-	public Seance(String codeS, String heureDeb, String heureFin, String date) {
+	public Seance(String codeS, String heureDeb, String heureFin, String date
+			,String type,String jour) {
 		super();
 		this.codeS = codeS;
 		this.heureDeb = heureDeb;
 		this.heureFin = heureFin;
 		this.date = date;
+		this.type=type;
+		this.setJour(jour);
 	}
 	
 
@@ -86,6 +91,26 @@ public class Seance {
 
 	public void setModule(Modulee module) {
 		this.module = module;
+	}
+
+
+	public String getType() {
+		return type;
+	}
+
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+
+	public String getJour() {
+		return jour;
+	}
+
+
+	public void setJour(String jour) {
+		this.jour = jour;
 	}
 	
 
