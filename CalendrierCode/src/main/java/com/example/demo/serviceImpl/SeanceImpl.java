@@ -6,11 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.entities.ChefDepartement;
+import com.example.demo.entities.Modulee;
 import com.example.demo.entities.Seance;
 import com.example.demo.repository.ChefDepartementRepository;
 import com.example.demo.repository.ModuleRepository;
 import com.example.demo.repository.SeanceRepository;
 import com.example.demo.service.SeanceService;
+import com.sun.nio.sctp.SendFailedNotification;
 @Service
 public class SeanceImpl implements SeanceService {
 
@@ -26,6 +28,9 @@ public class SeanceImpl implements SeanceService {
 			//chef determine 
 			ChefDepartement  chef=chefDepartementRepository.findById(id);
 			seance.setChef(chef);
+			
+			Modulee mo=seance.getModule();
+			seance.setModule(mo);
 			
 			if(seanceRepository.findByCodeS(seance.getCodeS())!=null)
 				return "fail";
