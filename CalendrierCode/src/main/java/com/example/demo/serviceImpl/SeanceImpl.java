@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.entities.ChefDepartement;
+import com.example.demo.entities.Classe;
 import com.example.demo.entities.Enseignant;
 import com.example.demo.entities.Modulee;
 import com.example.demo.entities.Seance;
@@ -39,6 +40,9 @@ public class SeanceImpl implements SeanceService {
 			
 			Enseignant en=seance.getEnseignant();//enseignantRepository.findById(seance.getEnseignant().getId());
 			seance.setEnseignant(en);
+			
+			Classe cl=seance.getCl();
+			seance.setCl(cl);
 			
 			if(seanceRepository.findByCodeS(seance.getCodeS())!=null)
 				return "fail";

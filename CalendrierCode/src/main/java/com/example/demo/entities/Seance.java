@@ -41,6 +41,16 @@ public class Seance {
 	}
 
 
+	public Classe getCl() {
+		return cl;
+	}
+
+
+	public void setCl(Classe cl) {
+		this.cl = cl;
+	}
+
+
 	public Enseignant getEnseignant() {
 		return enseignant;
 	}
