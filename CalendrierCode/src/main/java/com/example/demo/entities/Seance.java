@@ -41,6 +41,16 @@ public class Seance {
 	}
 
 
+	public Enseignant getEnseignant() {
+		return enseignant;
+	}
+
+
+	public void setEnseignant(Enseignant enseignant) {
+		this.enseignant = enseignant;
+	}
+
+
 	public ChefDepartement getChef() {
 		return chef;
 	}

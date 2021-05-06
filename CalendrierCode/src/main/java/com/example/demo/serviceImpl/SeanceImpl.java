@@ -6,9 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.entities.ChefDepartement;
+import com.example.demo.entities.Enseignant;
 import com.example.demo.entities.Modulee;
 import com.example.demo.entities.Seance;
 import com.example.demo.repository.ChefDepartementRepository;
+import com.example.demo.repository.EnseignantRepository;
 import com.example.demo.repository.ModuleRepository;
 import com.example.demo.repository.SeanceRepository;
 import com.example.demo.service.SeanceService;
@@ -22,6 +24,9 @@ public class SeanceImpl implements SeanceService {
 	ChefDepartementRepository chefDepartementRepository;
 	@Autowired
 	ModuleRepository  moduleRepository;
+	
+	@Autowired
+	EnseignantRepository  enseignantRepository;
 	@Override
 	public String addSeance(Seance seance,long id) {
 		try {
@@ -29,8 +34,11 @@ public class SeanceImpl implements SeanceService {
 			ChefDepartement  chef=chefDepartementRepository.findById(id);
 			seance.setChef(chef);
 			
-			Modulee mo=seance.getModule();
+			Modulee mo=seance.getModule();//moduleRepository.findByCodeM(seance.getModule().getCodeM());
 			seance.setModule(mo);
+			
+			Enseignant en=seance.getEnseignant();//enseignantRepository.findById(seance.getEnseignant().getId());
+			seance.setEnseignant(en);
 			
 			if(seanceRepository.findByCodeS(seance.getCodeS())!=null)
 				return "fail";
