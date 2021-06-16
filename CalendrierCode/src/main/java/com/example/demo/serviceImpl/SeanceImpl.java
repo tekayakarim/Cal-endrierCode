@@ -44,6 +44,13 @@ public class SeanceImpl implements SeanceService {
 			Classe cl=seance.getCl();
 			seance.setCl(cl);
 			
+			for (Seance sea : this.getAll()) {
+				if (sea.getCl().getCodeC().equals(cl.getCodeC()) &&
+					sea.getModule().getCodeM().equals(mo.getCodeM()) &&
+					sea.getEnseignant().getId()==en.getId()) {
+					return "seance existe deja";
+				}
+			}
 			if(seanceRepository.findByCodeS(seance.getCodeS())!=null)
 				return "fail";
 			
