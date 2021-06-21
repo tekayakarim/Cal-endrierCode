@@ -10,6 +10,7 @@ public class Seance {
 	private String heureDeb,heureFin,date;
 	private String type;
 	private String jour;
+	private int numSalle;
 	
 	@OneToOne
 	private Classe cl;
@@ -24,7 +25,7 @@ public class Seance {
 	private Enseignant enseignant;
 	
 	public Seance(String codeS, String heureDeb, String heureFin, String date
-			,String type,String jour) {
+			,String type,String jour,int numSalle) {
 		super();
 		this.codeS = codeS;
 		this.heureDeb = heureDeb;
@@ -32,12 +33,23 @@ public class Seance {
 		this.date = date;
 		this.type=type;
 		this.setJour(jour);
+		this.setNumSalle(numSalle);
 	}
 	
 
 	public Seance() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+
+	public int getNumSalle() {
+		return numSalle;
+	}
+
+
+	public void setNumSalle(int numSalle) {
+		this.numSalle = numSalle;
 	}
 
 

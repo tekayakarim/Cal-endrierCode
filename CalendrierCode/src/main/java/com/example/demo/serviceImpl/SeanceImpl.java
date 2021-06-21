@@ -1,5 +1,6 @@
 package com.example.demo.serviceImpl;
 
+import java.text.ParseException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,9 +48,35 @@ public class SeanceImpl implements SeanceService {
 			for (Seance sea : this.getAll()) {
 				if (sea.getCl().getCodeC().equals(cl.getCodeC()) &&
 					sea.getModule().getCodeM().equals(mo.getCodeM()) &&
-					sea.getEnseignant().getId()==en.getId()) {
+					sea.getEnseignant().getId()==en.getId() &&
+					sea.getNumSalle()==seance.getNumSalle()) {
 					return "seance existe deja";
 				}
+				if(sea.getJour().equals( seance.getJour()) && 
+						sea.getNumSalle()==seance.getNumSalle())
+				{
+					try {
+						int hhD=Integer.valueOf(sea.getHeureDeb().substring(0, 2));
+						int hhF=Integer.valueOf(sea.getHeureFin().substring(0, 2 ));
+						System.out.println("hhd "+ hhD + "hhf" + hhF);
+						int hhDCourante=Integer.valueOf(seance.getHeureDeb().substring(0, 2));
+						int hhFCourante=Integer.valueOf(seance.getHeureFin().substring(0, 2));
+						System.out.println("hhdCour "+ hhDCourante + "hhfcouran" + hhFCourante);
+						if(hhDCourante==hhD  ) {
+							
+							return "salle reservé a cette heure";
+							
+						}
+						if (hhFCourante==hhF ) {
+							
+							return "salle reservé a cette heure";
+						}
+						
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+				
 			}
 			if(seanceRepository.findByCodeS(seance.getCodeS())!=null)
 				return "fail";
